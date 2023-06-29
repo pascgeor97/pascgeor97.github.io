@@ -1,0 +1,20 @@
+<%- include('./partials/header'); -%>
+
+<h1>Home</h1>
+
+
+
+<% posts.forEach(function (post) { %> 
+<%  let content = post.content.substring(0,99); %>
+    <h1> <%= post.title %> </h1>  
+    <p> 
+        
+        <%= content.substring(0,content.lastIndexOf(" ")) + " ..." %> 
+        <a href="/post/<%= post.title %>">Read More</a> 
+
+    </p> 
+       
+
+<% }) ;%>
+    
+<%- include('./partials/footer'); -%>
